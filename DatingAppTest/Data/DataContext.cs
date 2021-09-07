@@ -13,5 +13,6 @@ namespace DatingAppTest.Data
         {
         }
         public DbSet<AppUser> Users { get; set; }
+
     }
 }

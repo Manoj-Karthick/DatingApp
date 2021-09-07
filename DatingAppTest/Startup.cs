@@ -1,6 +1,7 @@
 using DatingAppTest.Data;
 using DatingAppTest.Extensions;
 using DatingAppTest.Interfaces;
+using DatingAppTest.Middleware;
 using DatingAppTest.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -48,7 +49,8 @@ namespace DatingAppTest
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                //app.UseDeveloperExceptionPage();
+                app.UseMiddleware<ExceptionMiddleware>();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "DatingAppTest v1"));
             }
